@@ -29,6 +29,8 @@ express-typescript-advanced/
 │   │   ├── middlewares/
 │   │   │   ├── error-handler.middleware.ts
 │   │   │   ├── global.middleware.ts
+│   │   │   ├── apply.middleware.ts
+│   │   │   ├── http-logger.middleware.ts
 │   │   │   ├── ip-blacklist.middleware.ts
 │   │   │   ├── jwt-check.middleware.ts
 │   │   │   ├── not-found.middleware.ts
@@ -48,12 +50,14 @@ express-typescript-advanced/
 │   │   │   ├── number.schema.ts
 │   │   │   ├── pagination.schema.ts
 │   │   │   ├── password.schema.ts
+│   │   │   ├── ymd-date.schema.ts
 │   │   │   ├── uuid.schema.ts
 │   │   │   └── index.ts
 │   │   ├── services/
 │   │   │   ├── cookie.service.ts
 │   │   │   ├── jwt.service.ts
 │   │   │   ├── logger.service.ts
+│   │   │   ├── memory-cache.service.ts
 │   │   │   └── index.ts
 │   │   ├── types/
 │   │   │   ├── generic-fields.type.ts
@@ -61,6 +65,8 @@ express-typescript-advanced/
 │   │   ├── utils/
 │   │   │   ├── date.util.ts
 │   │   │   ├── helpers.util.ts
+│   │   │   ├── http.util.ts
+│   │   │   ├── with-cache.util.ts
 │   │   │   └── index.ts
 │   ├── modules/
 │   │   ├── user/
