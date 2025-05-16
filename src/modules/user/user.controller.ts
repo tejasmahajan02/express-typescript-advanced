@@ -73,7 +73,6 @@ class UserController extends BaseController {
               ? UserMessages.Success.FoundAll
               : UserMessages.Failure.NoDataFound,
             userEntities,
-            !!userEntities?.length,
             paginationQuery,
           ),
         );
