@@ -1,12 +1,17 @@
-import { Router } from "express";
+import { RequestHandler, Router } from 'express';
 
 // Abstract class that every controller should extend
 export abstract class BaseController {
   public router: Router;
-  public path: string = "/"; // Default to "/"
+  public basePath: string = '/'; // Default to "/"
 
-  constructor() {
+  constructor(...requestHandlers: RequestHandler[]) {
     this.router = Router({ mergeParams: true });
+
+    requestHandlers.forEach((mw) => {
+      this.router.use(mw);
+    });
+
     this.initializeRoutes();
   }
 

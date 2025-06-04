@@ -14,7 +14,7 @@ import { userSchema, updateUserSchema } from './schema/user.schema';
 import { BaseController } from '../../common/controllers/base.controller';
 
 class UserController extends BaseController {
-  public path: string = '/brand-vertical';
+  public basePath: string = '/users';
 
   constructor(private readonly userService: UserService) {
     super();
