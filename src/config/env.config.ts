@@ -36,8 +36,8 @@ export const config = {
   client: { origin: process.env.CLIENT_ORIGIN || '' },
   cors: {
     origins:
-      process.env.CORS_ORIGINS?.split(',')?.map((item) => item?.trim()) || [],
-    pattern: new RegExp(process.env.CORS_ORIGIN_REGEX || ''),
+      process.env.CORS_ORIGINS?.split(",")?.map((item) => item?.trim()) || [],
+    originPattern: new RegExp(process.env.CORS_ORIGIN_REGEX || ""),
   },
   blockedIps: new Set(
     (process.env.BLOCKED_IPS ?? '').split(',').filter((ip) => ip.trim()),

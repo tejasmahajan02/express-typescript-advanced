@@ -13,8 +13,8 @@ apiRouter.get('/health', (req: Request, res: Response) => {
 const authControllers = [
   userController
 ];
-authControllers.forEach(({ path, router }) => {
-  apiRouter.use(path, jwtCheck, router);
+authControllers.forEach(({ basePath, router }) => {
+  apiRouter.use(basePath, jwtCheck, router);
 });
 
 export default apiRouter;

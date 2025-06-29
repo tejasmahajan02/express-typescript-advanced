@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { getClientIp } from '../utils';
 import { config } from '../../config';
 import { ForbiddenException } from '../exceptions/http.exception';
+import { getClientIp } from '../utils/http.util';
 
 export default function ipBlacklist(
   req: Request,
@@ -11,7 +11,7 @@ export default function ipBlacklist(
   const clientIp = getClientIp(req);
 
   if (config.blockedIps.has(clientIp)) {
-    throw new ForbiddenException('Access denied');
+    throw new ForbiddenException('Access denied.');
   }
 
   next();

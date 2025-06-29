@@ -1,4 +1,10 @@
-import { RequestHandler, Router } from 'express';
+import {
+  NextFunction,
+  Response,
+  Request,
+  RequestHandler,
+  Router,
+} from 'express';
 
 // Abstract class that every controller should extend
 export abstract class BaseController {
@@ -17,4 +23,10 @@ export abstract class BaseController {
 
   // Abstract method that must be implemented in the child class
   protected abstract initializeRoutes(): void;
+
+  protected asyncHandler(fn: RequestHandler): RequestHandler {
+    return (req: Request, res: Response, next: NextFunction) => {
+      Promise.resolve(fn(req, res, next)).catch(next);
+    };
+  }
 }
