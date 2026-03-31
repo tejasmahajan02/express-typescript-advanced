@@ -19,3 +19,6 @@ export function roleCheck(...allowedRoles: Role[]) {
     next();
   };
 }
+
+export const adminOnly = roleCheck(Role.ADMIN);
+export const userOnly = roleCheck(Role.USER);
